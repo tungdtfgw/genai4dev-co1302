@@ -42,7 +42,7 @@ def get_initial_response(client, pdf_file):
     Please confirm you understand and are ready to answer questions about this document."""
 
     response = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-3.5-flash",
         contents=[pdf_file, initial_prompt]
     )
     return response
@@ -50,7 +50,7 @@ def get_initial_response(client, pdf_file):
 def ask_question(client, pdf_file, question):
     """Ask a question about the PDF and get Gemini's response."""
     response = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-3.5-flash",
         contents=[pdf_file, question]
     )
     return response
